@@ -117,7 +117,7 @@ public class Book{
 	}
 
 	public Object[] getBookModel() {
-		return new Object[] { id, title, publisher, publishedYear, ISBN, price, author, edition, volume}; 
+		return new Object[] { id, title, publisher, publishedYear, ISBN, price, author, edition, volume, stock.getQty()}; 
 	}
 
 	@Override
