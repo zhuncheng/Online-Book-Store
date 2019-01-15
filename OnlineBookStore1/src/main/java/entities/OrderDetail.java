@@ -28,6 +28,15 @@ public class OrderDetail {
 	
 	public OrderDetail() {}
 	
+	
+	public OrderDetail(int product_id, double qty, double discount, double price) {
+		this.product_id = product_id;
+		this.qty = qty;
+		this.discount = discount;
+		this.price = price;
+	}
+
+
 	public OrderDetail(int product_id, double qty, double discount, double subtotal, double price) {
 		this.product_id = product_id;
 		this.qty = qty;
@@ -82,7 +91,9 @@ public class OrderDetail {
 	}
 	
 	public double getSubTotal() {
-		return qty * price  - discount * (qty * price); 
+		double total = qty * price;
+		double dis = discount/100;
+		return total - dis * total; 
 	}
 
 	public Object[] getOrderDetailModel() {
